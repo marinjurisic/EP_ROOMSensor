@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ROOM Sensor</title>
+
+    <link rel="stylesheet" href='../static/css.css' />
+    <style>
+        #accordionSidebar li:hover{
+            background-color: rgb(182, 181, 181);
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <div id="wrapper">
+
+        <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/">Početna</a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/dijagrami">Dijagrami</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tablice">Tablice</a>
+            </li>
+
+        </ul>
+
+    <div class="container-fluid">
+
+        <form action="" method="POST" class="h3 m-4">
+            <input type="submit" name="Danas" class="btn btn-dark btn-lg" value="Danas">
+            <input type="submit" name="Jucer" class="btn btn-secondary btn-lg" value="Jučer">
+            <input type="submit" name="Svi_podaci" class="btn btn-danger btn-lg" value="Svi Podaci">
+        </form>
+
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-dark">Podaci iz tablice</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+			<th scope="col"></th>
+			<th scope="col">#</th>
+                        <th scope="col">Vrijeme mjerenja</th>
+                        <th scope="col">Temperatura</th>
+                        <th scope="col">Vlažnost zraka</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in data %}
+                        <tr>
+                        <th scope="row"></th>
+                        {% for cell in row %}
+                        
+                        <td>{{ cell }}</td>
+			{% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

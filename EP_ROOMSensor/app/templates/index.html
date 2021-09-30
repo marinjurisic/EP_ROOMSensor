@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="30">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Jurisic/Popovic">
+
+    <title>ROOM Sensor</title>
+
+    <link rel="stylesheet" href='../static/css.css' />
+    
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        #accordionSidebar li:hover{
+            background-color: rgb(182, 181, 181);
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <div id="wrapper">
+
+        <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/">Početna</a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/dijagrami">Dijagrami</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tablice">Tablice</a>
+            </li>
+
+        </ul>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 mb-4 mt-4">
+                            <div class="card shadow h-100 py-4">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                                Temperatura</div>
+                                            <div class="h1 mb-2 font-weight-bold text-gray-800">{{ temp }} °C</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-thermometer-half fa-4x text-danger"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="col-xl-6 col-md-6 mb-4 mt-4">
+                            <div class="card shadow h-100 py-4">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Vlažnost zraka</div>
+                                            <div class="h1 mb-2 font-weight-bold text-gray-800">{{ hum }} %</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-tint fa-4x text-primary"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-control m-3">
+                    <label>Zadnje mjerenje izvršeno: {{ time }}</label>
+                </div>
+                <a href="/"><button type="submit" class="btn btn-primary m-3">OSVJEŽI</button></a>
+</body>
+
+</html>
